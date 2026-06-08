@@ -1,0 +1,11 @@
+.env
+.env.*
+config/master.key
+config/credentials/*.key
+tmp/
+log/
+storage/
+node_modules/
+coverage/
+.byebug_history
+.DS_Store
