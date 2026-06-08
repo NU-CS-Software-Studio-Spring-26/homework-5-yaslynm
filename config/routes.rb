@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :todos
+  resources :todos do
+    patch :toggle_priority, on: :member
+  end
   get '/hello', to: 'todos#hello'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
