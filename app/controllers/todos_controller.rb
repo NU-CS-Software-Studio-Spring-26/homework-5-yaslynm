@@ -64,6 +64,16 @@ class TodosController < ApplicationController
     end
   end
 
+  def toggle_priority
+    @todo = Todo.find(params[:id])
+    @todo.update!(high_priority: !@todo.high_priority)
+  
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to todos_path, notice: "Todo priority updated." }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo
