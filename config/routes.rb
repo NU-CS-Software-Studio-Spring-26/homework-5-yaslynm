@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "todos#index"
+  
   resources :todos do
     patch :toggle_priority, on: :member
   end
