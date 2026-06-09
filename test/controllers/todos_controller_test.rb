@@ -40,11 +40,11 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
 
   test "should toggle priority with turbo stream response" do
     todo = todos(:one)
-  
+
     patch toggle_priority_todo_path(todo), headers: {
       "Accept" => "text/vnd.turbo-stream.html"
     }
-  
+
     assert_equal "text/vnd.turbo-stream.html", response.media_type
     assert_response :success
     todo.reload
